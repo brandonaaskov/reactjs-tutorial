@@ -5,7 +5,8 @@ var pkg = require('./package.json'),
     concat = require('gulp-concat'),
     concatCss = require('gulp-concat-css'),
     uglify = require('gulp-uglify'),
-    rename = require('gulp-rename')
+    rename = require('gulp-rename'),
+    react = require('gulp-react')
 
 // non-gulp stuff i need
 var _ = require('lodash'),
@@ -25,13 +26,15 @@ var serverPort = 3000,
 gulp.task('compileScripts', function () {
   gulp.src(paths.scripts)
       .pipe(plumber())
+      .pipe(react())
       .pipe(concat(pkg.name + '.js'))
       .pipe(gulp.dest(buildLocation))
 })
 
 gulp.task('compressScripts', function () {
   gulp.src(paths.build)
-      .pipe(uglify())
+      .pipe(react())
+//      .pipe(uglify())
       .pipe(rename(pkg.name + '.min.js'))
       .pipe(gulp.dest(buildLocation))
 })

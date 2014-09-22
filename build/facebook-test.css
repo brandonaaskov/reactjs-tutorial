@@ -17,8 +17,6 @@
   background-color: white;
   position: relative;
   padding: 7px 12px;
-  top: 26px;
-  /* TODO remove this - just for PixelPerfect */
 }
 
 .events-container .event::after {
@@ -204,21 +202,26 @@ table {
   color: #a7a7a7;
   text-transform: uppercase;
   letter-spacing: 0px;
-  height: 30px;
+  height: 60px;
   text-align: right;
 }
 
-.time-markers .hour.half {
-  padding-top: 2px;
-  font-size: 10px;
-  font-weight: bold;
+.time-markers .hour .time {
+  display: block;
+  height: 30px;
 }
 
-.time-markers .hour h6 {
-  display: inline;
-  font-size: 13px;
+.time-markers .hour .time strong {
   font-weight: bold;
+  font-size: 13px;
   color: #686868;
   margin-right: 1px;
   letter-spacing: 1px;
+}
+
+.time-markers .hour .half {
+  font-size: 10px;
+  font-weight: normal;
+  display: block;
+  height: 30px;
 }

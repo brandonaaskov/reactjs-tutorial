@@ -1,0 +1,17 @@
+{
+  "day": [
+    { "hour" : 9,   "morning": true},
+    { "hour" : 10,  "morning": true},
+    { "hour" : 11,  "morning": true},
+    { "hour" : 12,  "morning": false },
+    { "hour" : 1,   "morning": false },
+    { "hour" : 2,   "morning": false },
+    { "hour" : 3,   "morning": false },
+    { "hour" : 4,   "morning": false },
+    { "hour" : 5,   "morning": false },
+    { "hour" : 6,   "morning": false },
+    { "hour" : 7,   "morning": false },
+    { "hour" : 8,   "morning": false },
+    { "hour" : 9,   "morning": false }
+  ]
+}

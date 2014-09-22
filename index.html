@@ -3,19 +3,17 @@
 <head lang="en">
   <meta charset="UTF-8">
   <title>Facebook Calendar Test</title>
-  <script src="bower_components/react/react-with-addons.js"></script>
+  <script src="bower_components/react/react.js"></script>
+  <script src="bower_components/react/JSXTransformer.js"></script>
+  <script src="bower_components/jquery/dist/jquery.min.js"></script>
   <script src="build/facebook-test.js"></script>
   <link rel="stylesheet" href="build/facebook-test.css"/>
 </head>
 <body>
 
 <div class="calendar">
-  <ol class="time-markers">
-    <li class="hour"><h6>9:00</h6> am</li>
-    <li class="half hour">9:30</li>
-    <li class="hour"><h6>10:00</h6> am</li>
-    <li class="half hour">10:30</li>
-  </ol>
+  <ol id="time-markers"></ol>
+
   <div class="events-container">
     <div class="event">
       <h2 class="name">Sample Item</h2>

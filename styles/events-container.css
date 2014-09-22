@@ -17,7 +17,6 @@
   background-color: white;
   position: relative;
   padding: 7px 12px;
-  top: 26px; /* TODO remove this - just for PixelPerfect */
 }
 
 .events-container .event::after {
