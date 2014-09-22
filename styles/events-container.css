@@ -1,0 +1,45 @@
+.events-container {
+  position: relative;
+  left: 67px;
+  z-index: 1;
+  box-sizing: border-box;
+  height: 720px;
+  width: 620px;
+  padding: 10px;
+  background: #ececec;
+  border-left: 1px solid #d5d5d5;
+}
+
+.events-container .event {
+  box-sizing: border-box;
+  height: 120px;
+  border: 1px solid #d5d5d5;
+  background-color: white;
+  position: relative;
+  padding: 7px 12px;
+  top: 26px; /* TODO remove this - just for PixelPerfect */
+}
+
+.events-container .event::after {
+  content: "";
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  border-left: 4px solid #4b6ea9;
+  height: 100%;
+}
+
+.events-container .event .name {
+  color: #4b6ea9;
+  font-size: 11px;
+  letter-spacing: 1px;
+  font-weight: bold;
+  margin-bottom: 3px;
+}
+
+.events-container .event .location {
+  color: #797979;
+  font-size: 9px;
+  font-weight: normal;
+  letter-spacing: 0px;
+}

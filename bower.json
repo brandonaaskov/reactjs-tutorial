@@ -1,0 +1,13 @@
+{
+  "name": "facebook-test",
+  "version": "0.1.0",
+  "authors": [
+    "brandonaaskov <brandonaaskov@gmail.com>"
+  ],
+  "main": "holy-crap-dont-screw-up-this-facebook-test.js",
+  "license": "MIT",
+  "private": true,
+  "dependencies": {
+    "react": "~0.11.2"
+  }
+}
