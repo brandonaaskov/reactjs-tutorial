@@ -3,26 +3,25 @@
  */
 
 var TimeMarker = React.createClass({
-  displayName: 'TimeMarker',
-
   get: function (prop) {
     return this.props.data[prop]
   },
 
   render: function (){
-    console.log('TimeMarker render()')
     var morning = this.get('morning') === true
-    var meridian = (morning) ? 'am' : ''
+    var inclusive = this.get('inclusive') !== false
+    var meridian = (morning) ? 'am' : 'pm'
+    var hour = this.get('hour')
+    var halfHour = (inclusive) ? <span className="half">{hour}:30</span> : ''
+    var minutesIn = this.get('minutesIn')
 
     return (
-      <li className="time-marker">
-        <div className="hour">
-          <span className="time">
-            <strong>{this.get('hour')}:00</strong> {meridian}
-          </span>
-          <span className="half">{this.get('hour')}:30</span>
-        </div>
-      </li>
+      <div className="hour" data-minutes-in={minutesIn}>
+        <span className="time">
+          <strong>{this.get('hour')}:00</strong> {meridian}
+        </span>
+        {halfHour}
+      </div>
     )
   }
 })

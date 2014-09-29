@@ -12,7 +12,6 @@
 
 .events-container .event {
   box-sizing: border-box;
-  height: 120px;
   border: 1px solid #d5d5d5;
   background-color: white;
   position: relative;
@@ -187,7 +186,7 @@ table {
   border-collapse: collapse;
   border-spacing: 0;
 }
-.time-markers {
+#time-markers {
   position: absolute;
   top: 0px;
   left: 0px;
@@ -196,22 +195,22 @@ table {
   z-index: 2;
 }
 
-.time-markers .hour {
+#time-markers .hour {
   font-family: 'helvetica neue', sans-serif;
   font-size: 10px;
   color: #a7a7a7;
   text-transform: uppercase;
   letter-spacing: 0px;
-  height: 60px;
+  height: 59.5px;
   text-align: right;
 }
 
-.time-markers .hour .time {
+#time-markers .hour .time {
   display: block;
-  height: 30px;
+  height: 50%;
 }
 
-.time-markers .hour .time strong {
+#time-markers .hour .time strong {
   font-weight: bold;
   font-size: 13px;
   color: #686868;
@@ -219,9 +218,9 @@ table {
   letter-spacing: 1px;
 }
 
-.time-markers .hour .half {
+#time-markers .hour .half {
   font-size: 10px;
   font-weight: normal;
   display: block;
-  height: 30px;
+  height: 50%;
 }
