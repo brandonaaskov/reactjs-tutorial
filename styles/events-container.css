@@ -1,24 +1,31 @@
-.events-container {
+#events-container {
   position: relative;
   left: 67px;
   z-index: 1;
   box-sizing: border-box;
   height: 720px;
   width: 620px;
-  padding: 10px;
+  padding: 0 10px;
   background: #ececec;
   border-left: 1px solid #d5d5d5;
 }
 
-.events-container .event {
+#events-container li {
+  position: relative;
+  float: left;
+}
+
+#events-container .event {
   box-sizing: border-box;
   border: 1px solid #d5d5d5;
   background-color: white;
   position: relative;
   padding: 7px 12px;
+  height: 100%;
+  width: 100%;
 }
 
-.events-container .event::after {
+#events-container .event::after {
   content: "";
   position: absolute;
   top: 0px;
@@ -27,7 +34,7 @@
   height: 100%;
 }
 
-.events-container .event .name {
+#events-container .event .name {
   color: #4b6ea9;
   font-size: 11px;
   letter-spacing: 1px;
@@ -35,7 +42,7 @@
   margin-bottom: 3px;
 }
 
-.events-container .event .location {
+#events-container .event .location {
   color: #797979;
   font-size: 9px;
   font-weight: normal;

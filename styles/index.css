@@ -7,3 +7,11 @@
   direction: ltr;
   font-family: 'helvetica neue', helvetica, arial, 'lucida grande', sans-serif;
 }
+
+.clearfix:after {
+  content: '';
+  visibility: hidden;
+  display: block;
+  height: 0;
+  clear: both;
+}

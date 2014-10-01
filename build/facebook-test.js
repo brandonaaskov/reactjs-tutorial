@@ -1,39 +1,78 @@
+/**
+ * @jsx React.DOM
+ */
+
+var CalendarEvent = React.createClass({displayName: 'CalendarEvent',
+  render: function (){
+    return (
+      React.DOM.div({className: "event"}, 
+        React.DOM.h2({className: "name"}, "Sample Item"), 
+        React.DOM.h3({className: "location"}, "Sample Location")
+      )
+    )
+  }
+})
+
 $(document).ready(function () {
   var day = []
+  var $timeMarkers = $('#time-markers')
+  var $eventsContainer = $('#events-container')
 
-  var createTimeMarkers = function (callback) {
-    var $timeMarkers = $('#time-markers')
+  var getListItem = function () {
+    return $('<li></li>')
+  }
 
-    $.get('mock/day.json', function (response) {
-      $(response.day).each(function (index, hour) {
-        // we have to create this li here because React overwrites the contents
-        // of the container
-        $listItem = $('<li></li>')
-        $timeMarkers.append($listItem)
+  var getCalendarDay = function (callback) {
+    return $.get('mock/day.json').done(callback)
+  }
 
-        hour.minutesIn = index * 60 // our inputs are in minutes, so this helps
-        day.push(hour)
+  var createTimeMarkers = function (response) {
+    $(response.day).each(function (index, hour) {
+      hour.minutesIn = index * 60 // our inputs are in minutes, so this helps
+      day.push(hour)
 
-        React.renderComponent(TimeMarker({data: hour}), $listItem.get(0))
-        callback()
-      })
+      $listItem = getListItem()
+      $timeMarkers.append($listItem)
+      React.renderComponent(TimeMarker({data: hour}), $listItem.get(0))
     })
   }
 
   var layOutDay = function (events) {
-    // TODO determine heights based on how tall an hour is - break down into 5 or 10 minute increments
+    var hourHeight = $('.hour').height()
+    var minuteHeight = hourHeight/60
+
+    $(events).each(function (index, event) {
+      $listItem = getListItem()
+      timeInPixels = (event.end - event.start) * minuteHeight
+
+      $eventsContainer.append($listItem)
+      React.renderComponent(CalendarEvent({data: event}), $listItem.get(0))
+      $listItem.height(timeInPixels)
+      $listItem.addClass('clearfix')
+      $listItem.css('top', event.start * minuteHeight)
+    })
   }
 
-  createTimeMarkers(function () {
-    var events = [ //TODO remove this
+  // this is just for testing
+  var _simulate = function (timeout) {
+    timeout = timeout || 150
+    var events = [
       {start: 30, end: 150},
       {start: 540, end: 600},
       {start: 560, end: 620},
       {start: 610, end: 670}
     ]
 
-    layOutDay(events)
-  })
+    setTimeout(function () {
+      window.layOutDay(events)
+    }, timeout)
+  }
+
+  // just named for readability's sake
+  var initialize = function () {
+    getCalendarDay(createTimeMarkers)
+    _simulate()
+  }()
 
   window.layOutDay = layOutDay // surface the API
 })
