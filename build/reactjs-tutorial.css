@@ -12,7 +12,7 @@
 
 #events-container li {
   position: relative;
-  float: left;
+  display: inline-block;
 }
 
 #events-container .event {

@@ -3,10 +3,6 @@ $(document).ready(function () {
   var $timeMarkers = $('#time-markers')
   var $eventsContainer = $('#events-container')
 
-  var getListItem = function () {
-    return $('<li></li>')
-  }
-
   var getCalendarDay = function (callback) {
     return $.get('mock/day.json').done(callback)
   }
@@ -16,7 +12,7 @@ $(document).ready(function () {
       hour.minutesIn = index * 60 // our inputs are in minutes, so this helps
       day.push(hour)
 
-      $listItem = getListItem()
+      $listItem = $('<li></li>')
       $timeMarkers.append($listItem)
       React.renderComponent(TimeMarker({data: hour}), $listItem.get(0))
     })
@@ -27,13 +23,12 @@ $(document).ready(function () {
     var minuteHeight = hourHeight/60
 
     $(events).each(function (index, event) {
-      $listItem = getListItem()
+      $listItem = $('<li></li>')
       timeInPixels = (event.end - event.start) * minuteHeight
 
       $eventsContainer.append($listItem)
       React.renderComponent(CalendarEvent({data: event}), $listItem.get(0))
       $listItem.height(timeInPixels)
-      $listItem.addClass('clearfix')
       $listItem.css('top', event.start * minuteHeight)
     })
   }

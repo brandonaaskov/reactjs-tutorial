@@ -1,5 +1,5 @@
 {
-  "name": "facebook-test",
+  "name": "reactjs-tutorial",
   "version": "0.0.0",
   "description": "",
   "main": "scripts/index.js",
@@ -8,14 +8,11 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/brandonaaskov/facebook"
+    "url": "https://github.com/brandonaaskov/reactjs-tutorial"
   },
   "author": "Brandon Aaskov",
   "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/brandonaaskov/facebook/issues"
-  },
-  "homepage": "https://github.com/brandonaaskov/facebook",
+  "homepage": "https://github.com/brandonaaskov/reactjs-tutorial",
   "devDependencies": {
     "gulp": "^3.8.8",
     "gulp-rename": "^1.2.0",
