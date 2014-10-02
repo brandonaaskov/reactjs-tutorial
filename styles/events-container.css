@@ -13,6 +13,7 @@
 #events-container li {
   position: relative;
   display: inline-block;
+  min-width: 120px;
 }
 
 #events-container .event {
@@ -22,7 +23,6 @@
   position: relative;
   padding: 7px 12px;
   height: 100%;
-  width: 100%;
 }
 
 #events-container .event::after {
